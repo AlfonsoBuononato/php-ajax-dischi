@@ -5,7 +5,7 @@ const app = new Vue({
         dischi:[]
     },
     created(){
-        const dataURL= "http://localhost/php-ajax-dischi/version-vue/database/database.php";
+        const dataURL= "http://localhost/esercizi%20boolean/php-ajax-dischi/version-vue/database/database.php";
         axios
         .get(dataURL)
         .then(result => {
