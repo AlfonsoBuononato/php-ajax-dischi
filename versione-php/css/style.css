@@ -1,0 +1,57 @@
+/* GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 920px;
+    margin: auto;
+}
+
+/* HEADER */
+
+header{
+    background-color: #132431;
+}
+
+header img{
+    width: 50px;
+    padding: 10px;
+}
+
+/* MAIN */
+
+main{
+    background-color: #182d3d;
+}
+
+main .content{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.box{
+    width: calc(100% / 4);
+    margin: 10px;
+    background-color: black;
+    color: white;
+}
+
+.box ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.box img{
+    width: 100%;
+}
+
+.box li{
+    list-style: none;
+}
