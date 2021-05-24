@@ -1,7 +1,8 @@
 <main>
     <label for="select">
-        <select name="select">
-            <option value="" v-for="disco in dischi">{{disco.genre}}</option>
+        <select name="select" v-model="query" @change="filtered" >
+            <option value="all">all</option>
+            <option :value="gen" v-for="gen in genere">{{gen}}</option>
         </select>
     </label>
     <div class="container content">

@@ -4,31 +4,37 @@ const app = new Vue({
         img: "./img/logo.png",
         dischi: [],
         genere: [],
-        filtraggio: []
+        filtraggio: [],
+        query: "all"
     },
     created(){
-        const dataURL= "http://localhost/esercizi%20boolean/php-ajax-dischi/version-vue/database/database-json.php";
+        const dataURL= "http://localhost/esercizi%20boolean/php-ajax-dischi/version-vue/database/database-json.php?query=";
         axios
         .get(dataURL)
         .then(result => {
-            console.log(result.data);
             this.dischi = result.data.database_filtered;
-            console.log();
+            this.genere = result.data.genere;
         })
         .catch(err => {
             console.log(err);
         });
     },
-   /*  methods:{
+    methods:{
         filtered(){
-           const dataFiltered = "http://localhost/esercizi%20boolean/php-ajax-dischi/version-vue/database/filter-database.php";
-           axios
-           .get(dataFiltered, {
-               query: ""
-           })
-           .then (result =>{
-               console.log(result.data);
-           })
+            const dataURL= "http://localhost/esercizi%20boolean/php-ajax-dischi/version-vue/database/database-json.php";
+            axios
+            .get(dataURL, {
+                params:{
+                    query: this.query,
+                }
+            })
+            .then(result => {
+                console.log(this.query);
+                this.dischi = result.data.database_filtered;
+            })
+            .catch(err => {
+                console.log(err);
+            });
         }
-    } */
+    }
 })
