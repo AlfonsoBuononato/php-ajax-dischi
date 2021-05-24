@@ -1,4 +1,9 @@
 <main>
+    <label for="select">
+        <select name="select">
+            <option value="" v-for="disco in dischi">{{disco.genre}}</option>
+        </select>
+    </label>
     <div class="container content">
         <div class="box" v-for="disco in dischi">
             <ul>
